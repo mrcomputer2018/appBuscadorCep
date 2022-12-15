@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import 
-{ View, StyleSheet, Text, TextInput, TouchableOpacity, Keyboard } 
+{ View, StyleSheet, Text, TextInput, 
+TouchableOpacity, Keyboard, SafeAreaView } 
 from "react-native";
 
 import api from "./src/services/api";
@@ -34,7 +35,7 @@ export default function App(){
     }
 
     return(
-        <View style={ styles.container }>
+        <SafeAreaView style={ styles.container }>
            {/* titulo */}
             <Text style={ styles.title }>
                 Buscador de CEP
@@ -74,6 +75,8 @@ export default function App(){
                     </Text>
                 </TouchableOpacity>
             </View>
+            
+            {/* resultado */}
             { result &&
                 <View style={ styles.viewTxt }>
                     <Text style={ [styles.txt, { fontWeight: 'bold' }] }>
@@ -97,7 +100,7 @@ export default function App(){
                 </View>
             }
 
-        </View>
+        </SafeAreaView>
     );
 }
 
